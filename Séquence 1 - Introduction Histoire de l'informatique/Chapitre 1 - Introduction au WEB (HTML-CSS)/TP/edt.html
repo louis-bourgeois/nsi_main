@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mon emploi du temps - 2024</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      table {
+        width: 75vw;
+        border: solid black 1px;
+        border-radius: 16px;
+      }
+
+      th {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+
+        border-bottom: 1px;
+      }
+
+      td {
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        min-width: 5%;
+
+        padding: 2.5%;
+        border-radius: 15px;
+        cursor: pointer;
+      }
+      td:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body class="poppins">
+    <table>
+      <tr id="row-label">
+        <td></td>
+        <th>Lundi</th>
+        <th>Mardi</th>
+        <th>Mercredi</th>
+        <th>Jeudi</th>
+        <th>Vendredi</th>
+      </tr>
+      <tr id="row-8h">
+        <th>8h00</th>
+        <td></td>
+        <td>DS</td>
+        <td>FR</td>
+        <td>EPS</td>
+        <td>SNT</td>
+      </tr>
+      <tr id="row-8h55">
+        <th>8h55</th>
+        <td>Semaine A : Orientation Semaine B : V.D.C</td>
+        <td>DS</td>
+        <td>FR</td>
+        <td>EPS</td>
+        <td>Ens. Scientifique : Physique</td>
+      </tr>
+      <tr id="row-9h45">
+        <th>10h05</th>
+        <td>Maths</td>
+        <td>P.-C.</td>
+        <td>Semaine A : LV1 Semaine B : EMC</td>
+        <td>H.G.</td>
+        <td>LV1</td>
+      </tr>
+      <tr>
+        <th>11h00</th>
+        <td>Maths</td>
+        <td>P.-C.</td>
+        <td>LV1</td>
+        <td>LV2</td>
+        <td>FR</td>
+      </tr>
+      <tr>
+        <th>12h30</th>
+        <td>FIRST</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>FIRST</td>
+      </tr>
+      <tr>
+        <th>13h30</th>
+        <td rowspan="2">NSI</td>
+        <td></td>
+        <td>Français</td>
+        <td>Maths</td>
+        <td>P.-C.</td>
+      </tr>
+      <tr>
+        <th>14h25</th>
+        <!-- <td>NSI</td> -->
+        <td>H.G.</td>
+        <td></td>
+        <td rowspan="2">Maths</td>
+        <td>P.-C.</td>
+      </tr>
+      <tr>
+        <th>15h35</th>
+        <td></td>
+        <td>H.G.</td>
+        <td></td>
+        <!-- <td>Maths</td> -->
+        <td>P.-C.</td>
+      </tr>
+      <tr>
+        <th>16h30</th>
+        <td></td>
+        <td>Ens. Scientifique : SVT</td>
+        <td></td>
+        <td>NSI</td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>
