@@ -3,119 +3,136 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mon emploi du temps - 2024</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-      table {
-        width: 75vw;
-        border: solid black 1px;
-        border-radius: 16px;
-      }
-
-      th {
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
-        font-style: normal;
-
-        border-bottom: 1px;
-      }
-
-      td {
-        font-family: "Poppins", sans-serif;
-        font-weight: 300;
-        font-style: normal;
-        min-width: 5%;
-
-        padding: 2.5%;
-        border-radius: 15px;
-        cursor: pointer;
-      }
-      td:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-      }
-    </style>
+    <title>Emploi du temps interactif</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="poppins">
+  <body>
     <table>
-      <tr id="row-label">
-        <td></td>
+      <tr>
+        <th></th>
         <th>Lundi</th>
         <th>Mardi</th>
         <th>Mercredi</th>
         <th>Jeudi</th>
         <th>Vendredi</th>
       </tr>
-      <tr id="row-8h">
-        <th>8h00</th>
+      <tr>
+        <td class="time">8h00</td>
         <td></td>
-        <td>DS</td>
-        <td>FR</td>
-        <td>EPS</td>
-        <td>SNT</td>
-      </tr>
-      <tr id="row-8h55">
-        <th>8h55</th>
-        <td>Semaine A : Orientation Semaine B : V.D.C</td>
-        <td>DS</td>
-        <td>FR</td>
-        <td>EPS</td>
-        <td>Ens. Scientifique : Physique</td>
-      </tr>
-      <tr id="row-9h45">
-        <th>10h05</th>
-        <td>Maths</td>
-        <td>P.-C.</td>
-        <td>Semaine A : LV1 Semaine B : EMC</td>
-        <td>H.G.</td>
-        <td>LV1</td>
+        <td rowspan="2" class="course">DS<br />SURVEILLANT2<br />Etude 2</td>
+        <td rowspan="2" class="course french">
+          FRANCAIS<br />MANTION S.<br />114
+        </td>
+        <td rowspan="2" class="course sport">EPS<br />FASQUELLE A.<br />EPS</td>
+        <td class="course ap">AP</td>
       </tr>
       <tr>
-        <th>11h00</th>
-        <td>Maths</td>
-        <td>P.-C.</td>
-        <td>LV1</td>
-        <td>LV2</td>
-        <td>FR</td>
+        <td class="time">8h55</td>
+        <td class="course">
+          <div class="split-cell">
+            <div>
+              <span class="week-a">Sem A</span>
+              ORIENTATION<br />LENOIRE M.<br />114
+            </div>
+            <div>
+              <span class="week-b">Sem B</span>
+              VIE DE CLASSE<br />LEROY A.<br />114
+            </div>
+          </div>
+        </td>
+        <td class="course science">
+          ENS. SCIENTIFIQUE<br />CZAPSKI A.<br />212 Amphi Phys
+        </td>
       </tr>
       <tr>
-        <th>12h30</th>
-        <td>FIRST</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>FIRST</td>
+        <td class="time">9h50</td>
+        <td colspan="5" class="break">Récréation</td>
       </tr>
       <tr>
-        <th>13h30</th>
-        <td rowspan="2">NSI</td>
-        <td></td>
-        <td>Français</td>
-        <td>Maths</td>
-        <td>P.-C.</td>
+        <td class="time">10h05</td>
+        <td rowspan="2" class="course math">
+          MATHEMATIQUES<br />DUVIVIER D.<br />233
+        </td>
+        <td rowspan="2" class="course physics">
+          PHYSIQUE-CHIMIE<br />PLAN B.<br />214
+        </td>
+        <td class="course">
+          <div class="split-cell">
+            <div>
+              <span class="week-a">Sem A</span>
+              ANGLAIS LV1<br />MOREL F.<br />114
+            </div>
+            <div>
+              <span class="week-b">Sem B</span>
+              ENS. MORAL ET CIVIQUE<br />MOREL F.<br />114
+            </div>
+          </div>
+        </td>
+        <td class="course history">
+          HISTOIRE-GEOGRAPHIE<br />LEROY A.<br />114
+        </td>
+        <td class="course english">ANGLAIS LV1<br />MOREL F.<br />114</td>
       </tr>
       <tr>
-        <th>14h25</th>
-        <!-- <td>NSI</td> -->
-        <td>H.G.</td>
-        <td></td>
-        <td rowspan="2">Maths</td>
-        <td>P.-C.</td>
+        <td class="time">11h00</td>
+        <td class="course english">ANGLAIS LV1<br />MOREL F.<br />114</td>
+        <td class="course spanish">ESPAGNOL LV2<br />NOISETTE C.<br />114</td>
+        <td class="course french">FRANCAIS<br />MANTION S.<br />114</td>
       </tr>
       <tr>
-        <th>15h35</th>
-        <td></td>
-        <td>H.G.</td>
-        <td></td>
-        <!-- <td>Maths</td> -->
-        <td>P.-C.</td>
+        <td class="time">11h55</td>
+        <td colspan="5" class="break">Pause déjeuner</td>
       </tr>
       <tr>
-        <th>16h30</th>
+        <td class="time">12h35</td>
+        <td class="course">Prépa First2<br />GARNIER B.<br />116</td>
         <td></td>
-        <td>Ens. Scientifique : SVT</td>
+        <td rowspan="6"></td>
         <td></td>
-        <td>NSI</td>
+        <td class="course">Prépa First2<br />GARNIER B.<br />116</td>
+      </tr>
+      <tr>
+        <td class="time">13h25</td>
+        <td rowspan="2" class="course computer-science">
+          NSI<br />JOUIN A.<br />326 Info Mat
+        </td>
+        <td class="course french">FRANCAIS<br />MANTION S.<br />114</td>
+        <td rowspan="2" class="course math">
+          MATHEMATIQUES<br />DUVIVIER D.<br />233
+        </td>
+        <td rowspan="2" class="course physics">
+          PHYSIQUE-CHIMIE<br />PLAN B.<br />205 TP Phys/Chim 1ère<br />214
+        </td>
+      </tr>
+      <tr>
+        <td class="time">14h25</td>
+        <td class="course history">
+          HISTOIRE-GEOGRAPHIE<br />LEROY A.<br />114
+        </td>
+      </tr>
+      <tr>
+        <td class="time">15h20</td>
+        <td colspan="5" class="break">Récréation</td>
+      </tr>
+      <tr>
+        <td class="time">15h35</td>
+        <td></td>
+        <td class="course history">
+          HISTOIRE-GEOGRAPHIE<br />LEROY A.<br />114
+        </td>
+        <td rowspan="2" class="course computer-science">
+          NSI<br />JOUIN A.<br />326 Info Mat
+        </td>
+        <td class="course spanish">ESPAGNOL LV2<br />NOISETTE C.<br />114</td>
+      </tr>
+      <tr>
+        <td class="time">16h30</td>
+        <td></td>
+        <td class="course science">ENS. SCIENTIFIQUE<br />CIVEL A.<br />114</td>
         <td></td>
       </tr>
     </table>
