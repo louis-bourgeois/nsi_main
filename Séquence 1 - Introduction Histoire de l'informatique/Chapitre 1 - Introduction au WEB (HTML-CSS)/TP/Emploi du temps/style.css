@@ -1,0 +1,170 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #020202;
+  color: #e8f3ff;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 2px;
+  background-color: #0d0c0c;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  height: 50px;
+  width: 5vw;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+}
+
+th {
+  background-color: #1a1a1a;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a2cefe;
+  border: 1px solid #333;
+}
+
+.time {
+  width: 10%;
+  font-weight: 600;
+  background-color: #1a1a1a;
+  color: #a2cefe;
+  border: 1px solid #333;
+}
+
+.course {
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+}
+
+.course:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.split-cell {
+  display: flex;
+  height: 100%;
+}
+
+.split-cell div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+}
+
+.split-cell div:last-child {
+  border-right: none;
+}
+
+.week-a {
+  color: #a2cefe;
+}
+
+.week-b {
+  color: #e8f3ff;
+}
+
+
+.math {
+  color: #ff6b6b;
+}
+.physics {
+  color: #4ecdc4;
+}
+.french {
+  color: #45b7d1;
+}
+.english {
+  color: #ffd93d;
+}
+.history {
+  color: #ff8cc3;
+}
+.spanish {
+  color: #ff9a8b;
+}
+.computer-science {
+  color: #6bff95;
+}
+.sport {
+  color: #ffa07a;
+}
+.science {
+  color: #c780e8;
+}
+.ap {
+  color: #007aff;
+}
+
+.break {
+  background-color: transparent;
+  font-style: italic;
+  font-size: 0.9em;
+  height: 30px;
+  color: grey;
+}
+
+td:empty {
+  background-color: transparent;
+  border: none;
+}
+
+.course:hover {
+  background-color: #222;
+}
+
+.course:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  pointer-events: none;
+  border-radius: 12px;
+}
+
+.course::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  opacity: 0;
+  transition: opacity 5s ease;
+  border-radius: 12px;
+}
+
+.course:hover::before {
+  opacity: 1;
+}
