@@ -48,9 +48,9 @@ import "./globals.css";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className="scroll-smooth">
       <body
-        className={`min-h-[100vh] flex flex-col items-center justify-start gap-[40vh] mx-[4vw]`}
+        className={`min-h-screen flex flex-col items-center justify-start gap-[42vh] mx-[4vw] overflow-x-hidden scroll-smooth custom-scrollbar`}
       >
         <div className="texture-overlay" />
         {children}
@@ -58,6 +58,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
-// Figma file (password protected) : https://www.figma.com/design/A9E829dZGFP96sPBxoWoe2/Untitled?node-id=1-4&m=dev
-// note pour moi : 008@#59

@@ -18,3 +18,33 @@
 body {
   background-color: #fefaf6;
 }
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Réduire la largeur de la scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Pas de background sur le track */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #000; /* Scrollbar noire */
+  border-radius: 10px; /* Coins arrondis */
+  border: 2px solid #fff; /* Bordure blanche pour l'effet de "décollée" */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #333; /* Scrollbar plus claire au hover */
+  border: 2px solid #ddd; /* Bordure légèrement plus claire au hover */
+}
+.sticky-transition {
+  position: sticky;
+  top: 17.5vh;
+}
+
+.non-sticky {
+  position: relative;
+  top: 0;
+  opacity: 1;
+}
