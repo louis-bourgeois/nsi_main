@@ -31,7 +31,7 @@ export default function Heroe({ h1 }) {
         <Tux width={375} height={375} />
       </a>
       <a
-        href="#netscape"
+          href="#netscape"
         className="hover:scale-110 transition-all cursor-pointer absolute top-32 left-1/2 transform -translate-x-1/2"
       >
         <Blender width={64} height={64} />

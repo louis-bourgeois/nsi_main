@@ -5,15 +5,29 @@ import Card from "./Card";
 
 const events = [
   {
+    id: "unix",
+    date: 1969,
+    title: "Création d'Unix",
+    subtitle:
+      "Ken Thompson, Dennis Ritchie et l'équipe des Bell Labs créent Unix",
+    description:
+      "Unix est développé aux Bell Labs par Ken Thompson, Dennis Ritchie et d'autres. C'est l'un des systèmes d'exploitation les plus influents, ayant un impact profond sur les systèmes modernes, notamment Linux et macOS.",
+    details:
+      "Unix a été créé en 1969 (et publié pour le grand public en 1971) dans le cadre d'une initiative visant à construire un système d'exploitation multi-utilisateur, portable et flexible. Connu pour son approche simple mais puissante, Unix introduit des concepts fondamentaux comme les fichiers en tant que flux d'octets, les pipelines de commandes, et les permissions de fichiers. Il est écrit principalement en C, un langage développé par Dennis Ritchie spécifiquement pour Unix, ce qui le rend plus portable entre différentes machines. Unix a inspiré de nombreuses variantes et systèmes d'exploitation modernes, dont BSD (Berkeley Software Distribution), Linux, et macOS. Son modèle de développement influencé par la modularité et la philosophie des petits outils interconnectés a façonné la culture du développement logiciel moderne.",
+    image: "/unix.jpg",
+    additionalImages: ["/unix-terminal.png", "/unix-creators.jpg"],
+  },
+  {
     id: "gnu",
     date: 1983,
     title: "Projet GNU",
     subtitle: "Richard Stallman lance le projet GNU",
     description:
       "Le projet GNU, initié par Richard Stallman, vise à créer un système d'exploitation entièrement libre. C'est une étape cruciale dans l'histoire du logiciel libre, posant les bases éthiques et pratiques du mouvement.",
-    impact:
-      "Le projet GNU a établi les fondements philosophiques et techniques du logiciel libre, influençant profondément la culture du développement logiciel.",
-    image: "/pngegg (1).png",
+    details:
+      "Le projet GNU (GNU's Not Unix) a été lancé pour offrir un système d'exploitation libre et gratuit, en réaction aux restrictions imposées par les logiciels propriétaires. Richard Stallman a aussi créé la Free Software Foundation (FSF) pour promouvoir et défendre les libertés des utilisateurs de logiciels. La création de la licence GNU GPL (General Public License) est un autre moment important, car elle garantit que les logiciels dérivés restent libres. Le projet a également influencé la philosophie des hackers et des développeurs en prônant la collaboration et la transparence.",
+    image: "/gnu.png",
+    additionalImages: ["/richard-stallman.jpg", "/gnu-logo.png"],
   },
   {
     id: "linux",
@@ -22,9 +36,10 @@ const events = [
     subtitle: "Linus Torvalds publie la première version du noyau Linux",
     description:
       "Linus Torvalds développe le noyau Linux, qui, combiné aux outils GNU, forme un système d'exploitation complet. Cet événement marque le début de la popularisation des systèmes d'exploitation libres.",
-    impact:
-      "Linux est devenu le noyau le plus utilisé au monde, propulsant des millions de serveurs, d'appareils embarqués et de smartphones Android.",
-    image: "/image-4.webp",
+    details:
+      "Torvalds a initialement développé Linux comme un projet personnel pour créer une alternative libre aux systèmes UNIX propriétaires. Le noyau a rapidement attiré l'attention de la communauté open source, qui a commencé à contribuer au projet. Associé aux outils GNU, il forme la base de nombreuses distributions (comme Debian, Ubuntu, Red Hat), popularisant les systèmes d'exploitation basés sur Linux. Aujourd'hui, Linux alimente des millions de serveurs, superordinateurs, et est le noyau dominant des systèmes Android.",
+    image: "/linux.webp",
+    additionalImages: ["/linus-torvalds.jpg", "/linux-distributions.png"],
   },
   {
     id: "netscape",
@@ -33,9 +48,10 @@ const events = [
     subtitle: "Netscape publie le code source de son navigateur",
     description:
       "Netscape prend la décision historique de publier le code source de son navigateur. Cette action conduit à la création du projet Mozilla et influence grandement le mouvement open source dans le domaine des navigateurs web.",
-    impact:
-      "Cette décision a donné naissance à Firefox et a contribué à la standardisation du web, promouvant l'innovation et la concurrence dans le domaine des navigateurs.",
-    image: "/net7.jpg",
+    details:
+      "Netscape a fait face à une concurrence intense avec l'Internet Explorer de Microsoft, qui dominait le marché des navigateurs. En publiant son code source, Netscape espérait revitaliser le développement de son navigateur via une communauté de développeurs. Cela a conduit à la création du projet Mozilla, dont l'une des plus grandes réussites a été le développement de Firefox. Cette initiative a permis de fixer des normes pour les navigateurs et a favorisé la concurrence, incitant à l'adoption de standards ouverts comme HTML, CSS et JavaScript.",
+    image: "/netscape.jpg",
+    additionalImages: ["/netscape-navigator.jpg", "/mozilla-project.png"],
   },
   {
     id: "blender",
@@ -44,9 +60,10 @@ const events = [
     subtitle: "La Fondation Blender est créée pour rendre Blender open source",
     description:
       "Après une campagne de financement réussie, Blender devient un logiciel open source. C'est un moment crucial pour l'industrie de l'animation 3D et des effets visuels.",
-    impact:
-      "Blender est devenu l'un des logiciels d'animation 3D et de VFX les plus populaires, démocratisant l'accès aux outils de création 3D de haute qualité.",
-    image: "/maxresdefault.jpg",
+    details:
+      "Blender, à l'origine un logiciel propriétaire développé par NeoGeo, une société néerlandaise, a été rendu open source après une levée de fonds communautaire. La Fondation Blender, sous la direction de Ton Roosendaal, a permis de maintenir le développement actif de Blender et de le transformer en l'un des outils d'animation 3D les plus utilisés. Blender est largement apprécié pour ses fonctionnalités puissantes, son absence de frais de licence, et a contribué à rendre les outils d'animation 3D accessibles à une large audience, y compris les créateurs indépendants.",
+    image: "/blender.jpg",
+    additionalImages: ["/blender-interface.jpeg", "/blender-animation.jpg"],
   },
   {
     id: "firefox",
@@ -55,9 +72,10 @@ const events = [
     subtitle: "Mozilla lance le navigateur Firefox",
     description:
       "Mozilla lance Firefox, un navigateur web libre et open-source. Firefox devient rapidement populaire, offrant une alternative viable aux navigateurs propriétaires et promouvant les standards du web ouvert.",
-    impact:
-      "Firefox a brisé le monopole d'Internet Explorer, encourageant l'innovation web et l'adhésion aux standards ouverts.",
+    details:
+      "Mozilla Firefox, initialement appelé Phoenix, a été lancé pour contrecarrer la domination d'Internet Explorer, qui contrôlait plus de 90 % du marché. Firefox a introduit des fonctionnalités innovantes comme la navigation par onglets, les extensions et une meilleure sécurité, ce qui a rapidement attiré les utilisateurs. Il a joué un rôle clé dans la promotion des standards ouverts du web, contribuant à l'émergence d'un internet plus diversifié et compétitif. La montée de Firefox a encouragé Microsoft à réagir en améliorant Internet Explorer.",
     image: "/firefox.png",
+    additionalImages: ["/firefox-interface.png", "/firefox-logo-evolution.png"],
   },
   {
     id: "chrome",
@@ -66,9 +84,10 @@ const events = [
     subtitle: "Google lance le projet Chromium",
     description:
       "Google initie le projet Chromium, la base open-source du navigateur Chrome. Ce projet révolutionne la performance des navigateurs et influence considérablement le développement web moderne.",
-    impact:
-      "Chromium a établi de nouvelles normes de performance pour les navigateurs et est devenu la base de nombreux autres navigateurs, dont Microsoft Edge.",
+    details:
+      "Le projet Chromium est conçu pour être un navigateur léger, rapide et moderne, basé sur WebKit (remplacé plus tard par Blink). Le succès de Chrome repose sur sa rapidité, son interface minimaliste et son architecture multi-processus, qui améliore la stabilité et la sécurité. Chrome est rapidement devenu le navigateur le plus utilisé au monde et sa base open-source, Chromium, a été adoptée par d'autres projets tels que Microsoft Edge, Brave et Opera. Chromium a également favorisé l'adoption de nouvelles technologies comme le moteur JavaScript V8.",
     image: "/chromium.png",
+    additionalImages: ["/chrome-browser.jpg", "/chromium-architecture.png"],
   },
   {
     id: "react",
@@ -77,9 +96,10 @@ const events = [
     subtitle: "Facebook lance React et s'engage dans l'open source",
     description:
       "Facebook publie React, une bibliothèque JavaScript pour la construction d'interfaces utilisateur. Cette décision marque le début d'un engagement important de Facebook dans l'open source.",
-    impact:
-      "React a révolutionné le développement web frontend. De plus, Facebook a continué à contribuer à l'open source avec des projets comme React Native, GraphQL, et plus récemment, le modèle de langage Llama. Ce site lui-même a été créé avec React et Next.js, tous deux open source.",
-    image: "/maxresdefault (1).jpg",
+    details:
+      "React a introduit une approche innovante dans le développement web frontend avec un modèle basé sur des composants réutilisables et la gestion efficace des changements via un DOM virtuel. Ce paradigme a transformé la manière dont les développeurs construisent des interfaces utilisateur interactives et performantes. React est devenu un standard dans l'industrie du développement web et a conduit à une adoption massive dans la création de sites et d'applications. D'autres contributions open source importantes de Facebook incluent GraphQL, React Native et PyTorch.",
+    image: "/react.jpg",
+    additionalImages: ["/react-code.jpg", "/react-ecosystem.png"],
   },
   {
     id: "vscode",
@@ -88,9 +108,10 @@ const events = [
     subtitle: "Microsoft lance VS Code",
     description:
       "Microsoft surprend la communauté en lançant Visual Studio Code, un éditeur de code open-source. Cet événement marque un changement significatif dans l'approche de Microsoft envers le logiciel libre et open-source.",
-    impact:
-      "VS Code est devenu l'un des éditeurs de code les plus populaires, démontrant l'engagement croissant des grandes entreprises envers l'open source.",
+    details:
+      "Visual Studio Code (VS Code) a été une surprise majeure venant de Microsoft, une entreprise autrefois réticente à l'idée de l'open source. VS Code, avec ses fonctionnalités robustes, son extensibilité via des plugins, et sa légèreté par rapport aux autres IDE (environnements de développement intégrés), a rapidement gagné en popularité. Il est utilisé par des millions de développeurs dans le monde entier et a aidé Microsoft à améliorer son image dans la communauté open source, renforçant leur stratégie basée sur l'intégration des services cloud et l'interopérabilité.",
     image: "/vscode.png",
+    additionalImages: ["/vscode-interface.jpg", "/vscode-extensions.png"],
   },
   {
     id: "llama",
@@ -99,9 +120,10 @@ const events = [
     subtitle: "Meta (Facebook) publie Llama en open source",
     description:
       "Meta (anciennement Facebook) publie Llama, un grand modèle de langage, en open source. Cette décision permet à la communauté de recherche et de développement d'accéder à un modèle de pointe pour l'IA générative.",
-    impact:
-      "La publication de Llama en open source a démocratisé l'accès aux grands modèles de langage, stimulant l'innovation dans le domaine de l'IA et ouvrant de nouvelles possibilités pour la recherche et les applications.",
+    details:
+      "La publication de Llama (Large Language Model Meta AI) a marqué une étape importante dans l'accès démocratisé aux grands modèles de langage (LLMs). Contrairement à d'autres modèles propriétaires comme GPT-3, Llama est librement accessible à des fins de recherche et de développement. Cela a stimulé la créativité dans le domaine de l'IA, permettant à des chercheurs indépendants et à des petites entreprises d'explorer de nouveaux cas d'utilisation, d'améliorer la technologie existante, et de contribuer à une IA plus équitable.",
     image: "/llama.png",
+    additionalImages: ["/llama-architecture.jpg", "/meta-ai-lab.jpg"],
   },
 ];
 
@@ -120,7 +142,7 @@ export default function Frise() {
   );
 
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 20,
+    stiffness: 100,
     damping: 30,
     restDelta: 0.001,
   });
@@ -134,7 +156,29 @@ export default function Frise() {
         setCurrentDate(events[index].date);
       }
     });
-    return () => unsubscribe();
+
+    // Add smooth scrolling
+    const handleClick = (e) => {
+      const target = e.target.closest('a[href^="#"]');
+      if (target) {
+        e.preventDefault();
+        const id = target.getAttribute("href").slice(1);
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+          });
+        }
+      }
+    };
+
+    document.addEventListener("click", handleClick);
+
+    return () => {
+      unsubscribe();
+      document.removeEventListener("click", handleClick);
+    };
   }, [currentEventIndex]);
 
   return (
@@ -169,14 +213,13 @@ export default function Frise() {
       <div className="relative w-full flex justify-center items-start">
         <motion.div
           style={{ scaleY: smoothProgress }}
-          className="fixed left-1/2 top-0 bottom-0 w-2 rounded-full bg-black shadow-lg origin-top z-10"
+          className="fixed left-1/2 top-0 bottom-0 w-2 rounded-full bg-black shadow-lg origin-top"
         />
 
         <div className="w-full max-w-[50vw]">
           {events.map((event, index) => (
             <motion.div
               key={event.id}
-              id={event.id}
               style={{
                 opacity: useTransform(
                   currentEventIndex,
@@ -191,13 +234,13 @@ export default function Frise() {
               }}
               className="mb-[150vh] first:mt-[75vh]"
             >
+              <div
+                className="absolute top-1/2 left-0 transform -translate-y-1/2"
+                id={event.id}
+              />
               <motion.div
                 style={{
-                  position: useTransform(currentEventIndex, (value) =>
-                    value >= index - 0.75 && value <= index + 0.75
-                      ? "sticky"
-                      : "relative"
-                  ),
+                  position: "sticky",
                   top: "50%",
                   translateY: "-50%",
                 }}
@@ -209,7 +252,8 @@ export default function Frise() {
                   imageSrc={event.image}
                   date={event.date}
                   description={event.description}
-                  impact={event.impact}
+                  details={event.details}
+                  additionalImages={event.additionalImages}
                 />
               </motion.div>
             </motion.div>

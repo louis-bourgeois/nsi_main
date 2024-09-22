@@ -1,5 +1,3 @@
-// Blender
-
 export const Blender = ({ width = 100, height = 100, className = "" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
