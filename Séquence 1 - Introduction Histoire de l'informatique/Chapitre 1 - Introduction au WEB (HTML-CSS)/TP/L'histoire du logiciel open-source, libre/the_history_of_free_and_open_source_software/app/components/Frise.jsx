@@ -87,7 +87,7 @@ const events = [
     details:
       "Le projet Chromium est conçu pour être un navigateur léger, rapide et moderne, basé sur WebKit (remplacé plus tard par Blink). Le succès de Chrome repose sur sa rapidité, son interface minimaliste et son architecture multi-processus, qui améliore la stabilité et la sécurité. Chrome est rapidement devenu le navigateur le plus utilisé au monde et sa base open-source, Chromium, a été adoptée par d'autres projets tels que Microsoft Edge, Brave et Opera. Chromium a également favorisé l'adoption de nouvelles technologies comme le moteur JavaScript V8.",
     image: "/chromium.png",
-    additionalImages: ["/chrome-browser.jpg", "/chromium-architecture.png"],
+    additionalImages: ["/chrome-browser.png", "/chromium-architecture.png"],
   },
   {
     id: "react",
@@ -99,7 +99,7 @@ const events = [
     details:
       "React a introduit une approche innovante dans le développement web frontend avec un modèle basé sur des composants réutilisables et la gestion efficace des changements via un DOM virtuel. Ce paradigme a transformé la manière dont les développeurs construisent des interfaces utilisateur interactives et performantes. React est devenu un standard dans l'industrie du développement web et a conduit à une adoption massive dans la création de sites et d'applications. D'autres contributions open source importantes de Facebook incluent GraphQL, React Native et PyTorch.",
     image: "/react.jpg",
-    additionalImages: ["/react-code.jpg", "/react-ecosystem.png"],
+    additionalImages: ["/react-code.png", "/react-ecosystem.png"],
   },
   {
     id: "vscode",
@@ -111,7 +111,7 @@ const events = [
     details:
       "Visual Studio Code (VS Code) a été une surprise majeure venant de Microsoft, une entreprise autrefois réticente à l'idée de l'open source. VS Code, avec ses fonctionnalités robustes, son extensibilité via des plugins, et sa légèreté par rapport aux autres IDE (environnements de développement intégrés), a rapidement gagné en popularité. Il est utilisé par des millions de développeurs dans le monde entier et a aidé Microsoft à améliorer son image dans la communauté open source, renforçant leur stratégie basée sur l'intégration des services cloud et l'interopérabilité.",
     image: "/vscode.png",
-    additionalImages: ["/vscode-interface.jpg", "/vscode-extensions.png"],
+    additionalImages: ["/vscode-interface.png", "/vscode-extensions.png"],
   },
   {
     id: "llama",
@@ -121,9 +121,9 @@ const events = [
     description:
       "Meta (anciennement Facebook) publie Llama, un grand modèle de langage, en open source. Cette décision permet à la communauté de recherche et de développement d'accéder à un modèle de pointe pour l'IA générative.",
     details:
-      "La publication de Llama (Large Language Model Meta AI) a marqué une étape importante dans l'accès démocratisé aux grands modèles de langage (LLMs). Contrairement à d'autres modèles propriétaires comme GPT-3, Llama est librement accessible à des fins de recherche et de développement. Cela a stimulé la créativité dans le domaine de l'IA, permettant à des chercheurs indépendants et à des petites entreprises d'explorer de nouveaux cas d'utilisation, d'améliorer la technologie existante, et de contribuer à une IA plus équitable.",
+      "La publication de Llama (Large Language Model Meta AI) a marqué une étape importante dans l'accès démocratisé aux grands modèles de langage (LLMs). Contrairement à d'autres modèles propriétaires comme GPT-4o, Llama est librement accessible à des fins de recherche et de développement. Cela a stimulé la créativité dans le domaine de l'IA, permettant à des chercheurs indépendants et à des petites entreprises d'explorer de nouveaux cas d'utilisation, d'améliorer la technologie existante, et de contribuer à une IA plus équitable.",
     image: "/llama.png",
-    additionalImages: ["/llama-architecture.jpg", "/meta-ai-lab.jpg"],
+    additionalImages: ["/llama-architecture.png", "/meta-commitment.png"],
   },
 ];
 
@@ -157,9 +157,8 @@ export default function Frise() {
       }
     });
 
-    // Add smooth scrolling
     const handleClick = (e) => {
-      const target = e.target.closest('a[href^="#"]');
+      const target = e.target.closest("a[href^='#']");
       if (target) {
         e.preventDefault();
         const id = target.getAttribute("href").slice(1);
@@ -195,9 +194,8 @@ export default function Frise() {
         }}
         className="font-bold text-4xl mb-[5vh] text-center bg-white bg-opacity-80 px-6 py-2 rounded-full shadow-lg"
       >
-        Un plongeon à travers l'internet libre
+        Un plongeon à travers l&apos;internet libre
       </motion.h2>
-
       <motion.div
         style={{ position: "sticky", top: "20vh" }}
         className="w-full flex justify-center items-center mb-10 z-20"
@@ -209,7 +207,6 @@ export default function Frise() {
           {currentDate}
         </motion.div>
       </motion.div>
-
       <div className="relative w-full flex justify-center items-start">
         <motion.div
           style={{ scaleY: smoothProgress }}
@@ -217,48 +214,75 @@ export default function Frise() {
         />
 
         <div className="w-full max-w-[50vw]">
-          {events.map((event, index) => (
-            <motion.div
-              key={event.id}
-              style={{
-                opacity: useTransform(
-                  currentEventIndex,
-                  [index - 1.5, index - 1, index, index + 0.5, index + 1],
-                  [0, 1, 1, 1, 0]
-                ),
-                scale: useTransform(
-                  currentEventIndex,
-                  [index - 1, index, index + 1],
-                  [0.9, 1, 0.9]
-                ),
-              }}
-              className="mb-[150vh] first:mt-[75vh]"
-            >
-              <div
-                className="absolute top-1/2 left-0 transform -translate-y-1/2"
-                id={event.id}
-              />
+          {events.map((event, index) => {
+            // eslint-disable-next-line react-hooks/rules-of-hooks
+            const opacity = useTransform(
+              currentEventIndex,
+              [index - 1.5, index - 1, index, index + 0.5, index + 1],
+              [0, 1, 1, 1, 0]
+            );
+            // eslint-disable-next-line react-hooks/rules-of-hooks
+            const scale = useTransform(
+              currentEventIndex,
+              [index - 1, index, index + 1],
+              [0.9, 1, 0.9]
+            );
+
+            return (
               <motion.div
+                key={event.id}
                 style={{
-                  position: "sticky",
-                  top: "50%",
-                  translateY: "-50%",
+                  opacity,
+                  scale,
                 }}
+                className="mb-[150vh] first:mt-[75vh]"
               >
-                <Card
-                  id={event.id}
-                  title={event.title}
-                  subtitle={event.subtitle}
-                  imageSrc={event.image}
-                  date={event.date}
-                  description={event.description}
-                  details={event.details}
-                  additionalImages={event.additionalImages}
-                />
+                <div className="absolute top-1/2 left-0 transform -translate-y-1/2" />
+                <motion.div
+                  style={{
+                    position: "sticky",
+                    top: "50%",
+                    translateY: "-50%",
+                  }}
+                >
+                  <Card
+                    id={event.id}
+                    title={event.title}
+                    subtitle={event.subtitle}
+                    imageSrc={event.image}
+                    date={event.date}
+                    description={event.description}
+                    details={event.details}
+                    additionalImages={event.additionalImages}
+                  />
+                </motion.div>
               </motion.div>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
+      </div>
+      <div className="text-left font-light z-10 bg-black text-white px-10 py-3 rounded-xl">
+        <p>
+          Certaines animations ont été réalisées à l&apos;aide (de l&apos;api)
+          de Claude 3.5 Sonnet et de Gpt-4o-latest (animations framer-motion,
+          n&apos;étant pas à l&apos;aise avec cette librairie qui fait gagner du
+          temps). Cela permet de gagner du temps et d&apos;améliorer mon niveau
+          en prompt-engineering;
+        </p>
+        <p>
+          Certaines phrases des biographies ont été reformulées, améliorées à
+          l&apos;aide de chat Gpt-4o;
+        </p>
+        <p>
+          L&apos;ensemble des images sur ce site ont été publiées de manière à
+          respecter les licences (attributions...);
+        </p>
+        <p>
+          Certains bugs n&apos;ont pas eu le temps d&apos;être résolus
+          (problèmes de scroll sur les anchor points, problèmes de
+          positionnement lors du passage de sticky à relative sur la définition
+          de l&apos;open source, hover sur les cards).
+        </p>
       </div>
     </section>
   );

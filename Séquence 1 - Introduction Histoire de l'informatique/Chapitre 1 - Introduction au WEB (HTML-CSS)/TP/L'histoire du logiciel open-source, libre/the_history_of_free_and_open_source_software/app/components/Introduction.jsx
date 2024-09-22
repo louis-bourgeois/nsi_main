@@ -48,7 +48,6 @@ const Introduction = () => {
 
   return (
     <section
-      id="definition"
       className={`${
         isSticky ? "sticky-transition" : "non-sticky"
       } min-h-screen flex items-center transition-all pointer-events-none`}
@@ -59,6 +58,7 @@ const Introduction = () => {
         } flex items-left justify-start`}
       >
         <div
+          id="definition"
           ref={containerRef}
           className="w-[65%] text-6xl font-bold text-left leading-snug pointer-events-auto"
         >

@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useState } from "react";
 
 export default function Card({
@@ -16,6 +16,7 @@ export default function Card({
 
   return (
     <motion.div
+      id={id}
       whileHover={{ scale: 1.05, zIndex: 30 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -43,7 +44,7 @@ export default function Card({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.2 }}
-            className="absolute inset-0 bg-white bg-opacity-95 p-5 overflow-auto"
+            className="absolute inset-0 bg-white bg-opacity-95 p-5 overflow-auto custom-scrollbar"
           >
             <h3 className="font-bold text-3xl mb-2">{title}</h3>
             <p className="text-gray-800 mb-4 text-xl">{description}</p>

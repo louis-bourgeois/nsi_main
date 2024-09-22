@@ -1,3 +1,4 @@
+import Navbar from "./components/Navbar";
 import "./globals.css";
 
 export default function RootLayout({ children }) {
@@ -7,6 +8,7 @@ export default function RootLayout({ children }) {
         className={`min-h-screen flex flex-col items-center justify-start gap-[25vh] mx-[4vw] overflow-x-hidden scroll-smooth custom-scrollbar`}
       >
         <div className="texture-overlay" />
+        <Navbar />
         {children}
       </body>
     </html>
