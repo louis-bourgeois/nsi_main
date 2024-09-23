@@ -36,6 +36,9 @@ const Navbar = () => {
         className="flex-grow flex justify-between"
       >
         <ul className="flex flex-wrap items-center space-x-1 md:space-x-4">
+        <li>
+          <Link href={"/"}>Accueil</Link>
+        </li>
           {navItems.map((item) => (
             <li key={item.id}>
               <Link
