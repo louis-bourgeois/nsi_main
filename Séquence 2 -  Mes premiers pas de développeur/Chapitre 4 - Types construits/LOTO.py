@@ -1,39 +1,47 @@
-# je n'ai pas partagé le code en fonction
-
 import random
 
-numbers = list(range(1000001))
-random.shuffle(numbers)
-# Méthode 1 (nul à chier) :
-
-# result = []
-# for i in range(5):
-#     random.shuffle(numbers)
-#     result.append(random.choice(numbers))
-# print(result)
-
-# Avec les fonctions :
+import matplotlib.pyplot as plt
 
 
-def brassage(numbers):
-    random.shuffle(numbers)
+def init_loto():
+    try:
+        total_numbers = int(
+            input("Entrez le nombre total de numéros du loto : "))
+        numbers = list(range(1, total_numbers + 1))
+    except ValueError:
+        print("Erreur: rentrer un nombre, redémarrer le programme.")
+        numbers = []
     return numbers
 
 
-def tirage(numbers, n):
-    print([random.choice(numbers) for _ in range(n)])
+def simulate_tirage(numbers, n, num_draws):
+    stats = [[number, 0] for number in numbers]
+    for _ in range(num_draws):
+        result = random.sample(numbers, n)
+        for num in result:
+            stats[num - 1][1] += 1
+    return stats
 
 
-brassage(numbers)
-tirage(numbers, 5)
+def plot_stats(stats):
+    numbers = [item[0] for item in stats]
+    frequencies = [item[1] for item in stats]
+    plt.bar(numbers, frequencies)
+    plt.xlabel('Numéros du Loto')
+    plt.ylabel('Fréquence')
+    plt.title('Fréquence des Numéros du Loto après Simulations')
+    plt.show()
 
-# Méthode 2 (peut mieux faire) :
 
-# result = [random.choice(numbers) for _ in range(5)]
-# print(result)
+def main():
+    numbers = init_loto()
+    if not numbers:
+        return
+    n = 5
+    num_draws = 10000
+    stats = simulate_tirage(numbers, n, num_draws)
+    plot_stats(stats)
 
 
-# Méthode 3 : plus optimisée :
-
-# result = random.sample(numbers, 5)
-# print(result)
+if __name__ == "__main__":
+    main()
