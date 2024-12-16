@@ -19,12 +19,12 @@ characters = (
 
 
 def JOUER(lettre: str, mot: str):
-    trouve = False
+    found = False
     for i in range(len(mot)):  # ou range(0,len(mot))
         if mot[i].lower() == lettre.lower():
             liste[i] = lettre
-            trouve = True
-    return trouve
+            found = True
+    return found
 
 
 def PENDU(mot: str, tentative: int = 10):
@@ -46,12 +46,13 @@ def PENDU(mot: str, tentative: int = 10):
 
 
 PENDU("Lapin")
-while True:
-    liste = []
+play_again = True
+while play_again:
+    liste.clear()
     print("1 - Rejouer")
     print("2 - Quitter \n")
     response = input("Votre réponse : ")
     if response == "1":
         PENDU("Lapin")
     if response == "2":
-        break
+        play_again = False
