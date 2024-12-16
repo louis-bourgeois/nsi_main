@@ -44,16 +44,11 @@ medias = {
 }
 
 
-def add_media(titre, type, realisateur, annee, genre, acteurs):
-    exist = False
-    for media in medias.keys():
-        if media == titre:
-            exist = True
-
+def add_media(titre, type_, realisateur, annee, genre, acteurs):
     medias[titre] = {
-        "type": ,
-        "realisateur": ,
-        "annee": ,
-        "genre": ,
-        "acteurs"
+        "type": type_,
+        "realisateur": realisateur,
+        "annee": annee,
+        "genre": genre,
+        "acteurs": acteurs
     }
