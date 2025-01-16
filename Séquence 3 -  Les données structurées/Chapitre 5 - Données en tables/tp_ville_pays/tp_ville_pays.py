@@ -89,9 +89,9 @@ def moyenneHabitantVille():
 
 def top20paysPopulation(countries):
     liste_pays = []
-    for pays, infos in countries.items():
-        population = infos.get("Population", 0)
-        liste_pays.append((pays, population))
+    for pays in countries.values():
+        liste_pays.append(pays["Population"])
+    liste_pays.sort(reverse=True)      
 
     # Tri décroissant
     liste_pays.sort(key=lambda x: x[1], reverse=True)
@@ -99,14 +99,22 @@ def top20paysPopulation(countries):
     return liste_pays[:20]
 
 def ajouterVille(cities, fichier, newCity):
+    newRow = ""
+    for info in newCity.values():
+        newRow += f'{info};'
+    newRow = newRow[:-1]+"\n"
     nomVille = newCity["Name"]
     cities[nomVille] = newCity
 
-    with open(fichier, "a", encoding="utf-8") as f:
-        ligne = f"{newCity['Name']};{newCity['Country']};{newCity['Population']}\n"
-        f.write(ligne)
-
 print(moyenneHabitantVille(cities, countries))
+
+ajouterVille({"ID" : "AF-Wakanda",
+              "Name" : "Wakanda",
+              "Latitude": "0.0",
+              "Longitude": "0.0",
+              "Country_ISO" : "WA";
+              "Population": "10000"
+              })
 # print(nbPopulationFr())
 # afficher(recherche("France", countries))
 
