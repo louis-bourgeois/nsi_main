@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emploi du temps interactif</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th></th>
+        <th>Lundi</th>
+        <th>Mardi</th>
+        <th>Mercredi</th>
+        <th>Jeudi</th>
+        <th>Vendredi</th>
+      </tr>
+      <tr>
+        <td class="time">8h00</td>
+        <td></td>
+        <td rowspan="2" class="course">DS<br />SURVEILLANT2<br />Etude 2</td>
+        <td rowspan="2" class="course french">
+          FRANCAIS<br />MANTION S.<br />114
+        </td>
+        <td rowspan="2" class="course sport">EPS<br />FASQUELLE A.<br />EPS</td>
+        <td class="course ap">AP</td>
+      </tr>
+      <tr>
+        <td class="time">8h55</td>
+        <td class="course">
+          <div class="split-cell">
+            <div class="week-a">ORIENTATION<br />LENOIRE M.<br />114</div>
+            <div class="week-b">VIE DE CLASSE<br />LEROY A.<br />114</div>
+          </div>
+        </td>
+        <td class="course science">
+          ENS. SCIENTIFIQUE<br />CZAPSKI A.<br />212 Amphi Phys
+        </td>
+      </tr>
+      <tr>
+        <td class="time">9h50</td>
+        <td colspan="5" class="break">Récréation</td>
+      </tr>
+      <tr>
+        <td class="time">10h05</td>
+        <td rowspan="2" class="course math">
+          MATHEMATIQUES<br />DUVIVIER D.<br />233
+        </td>
+        <td rowspan="2" class="course physics">
+          PHYSIQUE-CHIMIE<br />PLAN B.<br />214
+        </td>
+        <td class="course">
+          <div class="split-cell">
+            <div class="week-a">ANGLAIS LV1<br />MOREL F.<br />114</div>
+            <div class="week-b">
+              ENS. MORAL ET CIVIQUE<br />MOREL F.<br />114
+            </div>
+          </div>
+        </td>
+        <td class="course history">
+          HISTOIRE-GEOGRAPHIE<br />LEROY A.<br />114
+        </td>
+        <td class="course english">ANGLAIS LV1<br />MOREL F.<br />114</td>
+      </tr>
+      <tr>
+        <td class="time">11h00</td>
+        <td class="course english">ANGLAIS LV1<br />MOREL F.<br />114</td>
+        <td class="course spanish">ESPAGNOL LV2<br />NOISETTE C.<br />114</td>
+        <td class="course french">FRANCAIS<br />MANTION S.<br />114</td>
+      </tr>
+      <tr>
+        <td class="time">11h55</td>
+        <td colspan="5" class="break">Pause déjeuner</td>
+      </tr>
+      <tr>
+        <td class="time">12h35</td>
+        <td class="course">Prépa First2<br />GARNIER B.<br />116</td>
+        <td></td>
+        <td rowspan="6"></td>
+        <td></td>
+        <td class="course">Prépa First2<br />GARNIER B.<br />116</td>
+      </tr>
+      <tr>
+        <td class="time">13h25</td>
+        <td rowspan="2" class="course computer-science">
+          NSI<br />JOUIN A.<br />326 Info Mat
+        </td>
+        <td class="course french">FRANCAIS<br />MANTION S.<br />114</td>
+        <td rowspan="2" class="course math">
+          MATHEMATIQUES<br />DUVIVIER D.<br />233
+        </td>
+        <td rowspan="2" class="course physics">
+          PHYSIQUE-CHIMIE<br />PLAN B.<br />205 TP Phys/Chim 1ère<br />214
+        </td>
+      </tr>
+      <tr>
+        <td class="time">14h25</td>
+        <td class="course history">
+          HISTOIRE-GEOGRAPHIE<br />LEROY A.<br />114
+        </td>
+      </tr>
+      <tr>
+        <td class="time">15h20</td>
+        <td colspan="5" class="break">Récréation</td>
+      </tr>
+      <tr>
+        <td class="time">15h35</td>
+        <td></td>
+        <td class="course history">
+          HISTOIRE-GEOGRAPHIE<br />LEROY A.<br />114
+        </td>
+        <td rowspan="2" class="course computer-science">
+          NSI<br />JOUIN A.<br />326 Info Mat
+        </td>
+        <td class="course spanish">ESPAGNOL LV2<br />NOISETTE C.<br />114</td>
+      </tr>
+      <tr>
+        <td class="time">16h30</td>
+        <td></td>
+        <td class="course science">ENS. SCIENTIFIQUE<br />CIVEL A.<br />114</td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

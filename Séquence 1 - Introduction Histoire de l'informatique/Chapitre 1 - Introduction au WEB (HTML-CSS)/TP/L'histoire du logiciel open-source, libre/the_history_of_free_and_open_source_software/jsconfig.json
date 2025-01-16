@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "jsx": "preserve",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": [
+    "app/components/Navbar.jsx",
+    "app/layout.jsx",
+    "app/page.jsx",
+    "tailwind.config.js"
+  ],
+  "exclude": ["node_modules"]
+}
