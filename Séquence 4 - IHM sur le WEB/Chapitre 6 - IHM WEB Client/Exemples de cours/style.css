@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 12vw;
+    height: 12vh;
+    border: solid 2px black;
+    background-color: blue;
+    border-radius: 50vw;
+    cursor: pointer;
+    transition: transform 0.1s ease-in;
+}
+
+.box:hover {
+    transform: scale(1.025);
+}
+
