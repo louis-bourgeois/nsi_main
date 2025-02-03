@@ -12,9 +12,21 @@
 <script>
     alert("Hello World")
     const currentYear = 2025
-    let birthYear = prompt("Entrez votre date de naissance")
-    alert(2025-parseInt(birthYear))
+    const birthYear = prompt("Entrez votre date de naissance")
+    const age = 2025-parseInt(birthYear)
+    alert(age)
+    console.log(age)
+    console.log((18 <= age <= 60) )
 
+    if (age >= 18 && age <= 60) {
+        alert("Vous êtes majeur")
+    } 
+    else if (age > 60) {
+        alert("Vous êtes membre du 4e age")
+    }
+    else {
+        alert("Vous êtes mineur")
+    }
     
     </script>
 </body>

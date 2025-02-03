@@ -5,11 +5,15 @@ body {
     flex-direction:column;
     margin: 0;
     padding: 0;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
 #image {
-    width: 80vw
+    width: 300px;
+    cursor: pointer;
 }
 
+#state {
+    font-size: 100px;
+}

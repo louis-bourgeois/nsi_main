@@ -8,6 +8,22 @@
 </head>
 <body>
     <img id="image" src="./ampoule_off.png" alt="Une image d'une ampoule">
-    <div>ON</div>
+    <div id="state">ON</div>
+
+    <script>
+        console.log("Hello World")
+        let image = document.querySelector("#image")
+        image.addEventListener("click", () => {
+        
+            state = document.getElementById("state")
+            if (state.innerHTML == "ON") {
+                image.src = "./ampoule_off.png"
+                state.innerHTML = "OFF"
+            } else {
+                image.src = "./ampoule_on.png"
+                state.innerHTML = "ON"
+            }
+        })
+    </script>
 </body>
 </html>
