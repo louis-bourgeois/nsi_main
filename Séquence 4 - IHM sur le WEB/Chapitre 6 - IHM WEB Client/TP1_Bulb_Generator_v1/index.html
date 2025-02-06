@@ -5,25 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bulb Generator v 1.0</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./switch.css">
 </head>
 <body>
     <img id="image" src="./ampoule_off.png" alt="Une image d'une ampoule">
-    <div id="state">ON</div>
-
+    <div id="button-container">
+        <div class="sub-container">
+            <h3>Boring mode</h3>
+            <label class="switch boring">
+                <input type="checkbox" id="boringSwitch">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="sub-container">
+            <h3>Disco Mode</h3>
+            <label class="switch disco">
+                <input type="checkbox" id="discoSwitch">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
     <script>
-        console.log("Hello World")
-        let image = document.querySelector("#image")
-        image.addEventListener("click", () => {
-        
-            state = document.getElementById("state")
-            if (state.innerHTML == "ON") {
-                image.src = "./ampoule_off.png"
-                state.innerHTML = "OFF"
-            } else {
-                image.src = "./ampoule_on.png"
-                state.innerHTML = "ON"
-            }
-        })
+    console.log("Hello World");
+
+    let boringSwitch = document.getElementById("boringSwitch");
+    let discoSwitch = document.getElementById("discoSwitch");
+    let image = document.getElementById("image");
+    let discoActive = false;
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    boringSwitch.addEventListener("change", async () => {
+        // updateBulb();
+        // OR
+        await orrrr()
+        // AND
+        // await anddd()
+    });
+
+    discoSwitch.addEventListener("change", async () => {
+        if (discoSwitch.checked) {
+            discoActive = true;
+            await startDisco();
+            // OR
+            await orrrr()
+            // AND
+            await anddd()
+        } else {
+            discoActive = false;
+            image.src = "./ampoule_off.png";
+        }
+    });
+
+    function updateBulb() {
+        if (boringSwitch.checked) {
+            image.src = "./ampoule_on.png";
+        } else {
+            image.src = "./ampoule_off.png";
+        }
+    }
+
+    async function startDisco() {
+        while (discoActive) {
+            image.src = image.src.includes("ampoule_on.png") ? "./ampoule_off.png" : "./ampoule_on.png";
+            await sleep(1000);
+        }
+    }
+
+    async function orrrr() {
+        if (discoSwitch.checked || boringSwitch.checked) {
+            image.src = "./ampoule_on.png";
+        } else {
+            image.src = "./ampoule_off.png";
+        }
+    }
+
+    async function anddd() {
+        if (discoSwitch.checked && boringSwitch.checked) {
+            image.src = "./ampoule_on.png";
+        } else {
+            image.src = "./ampoule_off.png";
+        }
+    }
+
     </script>
 </body>
 </html>

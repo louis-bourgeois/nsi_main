@@ -17,23 +17,26 @@ function play() {
   for (let i = 0; i < MAX / 10; i++) {
     html += "<tr>";
     for (let j = 0; j < MAX / 10; j++) {
-      html += `<td class="wrong black" onClick="tentative(${cpt})" id="${cpt}">${cpt}</td>`;
+      html += `<td class="" onClick="tentative(${cpt})" id="${cpt}">${cpt}</td>`;
       cpt++;
     }
     html += "</tr>";
   }
   table.innerHTML = html;
 
-  // Affichage en console pour tester
   console.log("Nombre mystère :", numMystere);
 }
 
 function tentative(numCell) {
-  let cell = document.getElementById(numCell);
-  console.log(numCell)
-  if (parseInt(cell.innerHTML) === numMystere) {
+  let cell = document.getElementById(numCell.toString());
+  let diff = Math.abs(numCell - numMystere);
+  let maxDiff = MAX;   
+  if (numCell === numMystere) {
+    cell.classList.remove("wrong");
     cell.classList.add("right");
+    cell.style.backgroundColor = "green";
   } else {
-    cell.classList.add("wrong");
+    let intensity = Math.floor(255 - (diff / maxDiff) * 255);
+    cell.style.backgroundColor = `rgb(255, ${intensity}, ${intensity})`;
   }
 }

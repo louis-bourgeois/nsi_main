@@ -20,22 +20,24 @@ table {
 
 button {
   width: 80px;
+  border-radius: 5rem;
   height: 80px;
 }
 
-.wrong {
-  background-color:red;
-  cursor: pointer;
-  transition: all 0.25s ease-in-out ;
-}
 
 .wrong:hover {
   transform: scale(0.95);
 }
 
+td {
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out ;
+}
+
+
+
 .right {
   background-color: grey
-}
-.black {
-  background-color: black;
 }
