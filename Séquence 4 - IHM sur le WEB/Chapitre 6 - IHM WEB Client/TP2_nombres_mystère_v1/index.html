@@ -8,7 +8,15 @@
   <body>
     <h1>TP Nombre Mystère v2.0</h1>
     <h2>GAME</h2>
-    <button onclick="play()">PLAY !</button>
+    <div id="settings_container">
+      <div id="difficulties_container">
+        <button class="difficulties_libelle" data-difficulty="easy" onclick="selectDifficulty()">Facile</button>
+        <button class="difficulties_libelle active" data-difficulty="medium" onclick="selectDifficulty()">Moyen</button>
+        <button class="difficulties_libelle" data-difficulty="hard" onclick="selectDifficulty()">Difficile</button>
+      </div>
+      <button onclick="play()">PLAY !</button>
+    </div>
+
     <br>
     <h3>Nombre d'essais : <span id="nbEssais">0</span></h3>
     <table id="tableau"> 
